@@ -1,5 +1,5 @@
 import React from 'react';
-<<<<<<< HEAD
+HEAD
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import Layout from './components/Layout';
@@ -30,7 +30,6 @@ const App = () => {
     </ThemeProvider>
   );
 };
-=======
 import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { ThemeProvider } from './context/ThemeContext';
@@ -45,7 +44,7 @@ function App() {
         <AuthProvider>
           <BrowserRouter>
             <AppRoutes />
-            
+
             {/* Custom Styled Toast Toaster */}
             <Toaster
               position="top-right"
@@ -76,6 +75,6 @@ function App() {
     </ErrorBoundary>
   );
 }
->>>>>>> ed1c99fe4af44587657213251c6f23c3b7c9de38
+ed1c99fe4af44587657213251c6f23c3b7c9de38
 
 export default App;
