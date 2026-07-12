@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(156, 163, 175, 0.25);
+    border-radius: 9999px;
+  }
+  .dark ::-webkit-scrollbar-thumb {
+    background: rgba(156, 163, 175, 0.15);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(156, 163, 175, 0.45);
+  }
+
+  body {
+    @apply overflow-x-hidden antialiased;
+  }
+}
+
+@layer components {
+  /* Premium Glassmorphic Layouts */
+  .glass-panel {
+    @apply bg-white/60 dark:bg-dark-900/40 backdrop-blur-md border border-white/20 dark:border-slate-800/40 shadow-xl;
+  }
+
+  .glass-card {
+    @apply bg-white/45 dark:bg-dark-900/25 backdrop-blur-sm border border-white/30 dark:border-slate-800/30 shadow-md transition-all duration-300 hover:shadow-lg hover:border-white/50 dark:hover:border-slate-700/50;
+  }
+
+  .glass-card-hover {
+    @apply hover:-translate-y-1 hover:bg-white/65 dark:hover:bg-dark-900/35;
+  }
+
+  .glass-modal {
+    @apply bg-white/80 dark:bg-dark-950/70 backdrop-blur-lg border border-white/30 dark:border-slate-800/40 shadow-2xl;
+  }
+
+  .glass-input {
+    @apply bg-white/50 dark:bg-dark-900/30 border border-slate-200 dark:border-slate-800/60 focus:border-primary-500 dark:focus:border-primary-400 focus:ring-1 focus:ring-primary-500/20 outline-none transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500;
+  }
+
+  .glass-sidebar {
+    @apply bg-white/70 dark:bg-dark-950/40 backdrop-blur-lg border-r border-white/20 dark:border-slate-800/30;
+  }
+
+  .glass-header {
+    @apply bg-white/50 dark:bg-dark-950/30 backdrop-blur-md border-b border-white/20 dark:border-slate-800/30;
+  }
+}
+
+/* Background animated glow orbs */
+.bg-glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
+}
+.dark .bg-glow-orb {
+  opacity: 0.08;
+}
+
+/* Custom transitions */
+.transition-layout {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
