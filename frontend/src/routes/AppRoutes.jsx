@@ -4,6 +4,9 @@ import ProtectedRoute from './ProtectedRoute';
 import DashboardLayout from '../layouts/DashboardLayout';
 import DashboardHome from '../pages/DashboardHome';
 import Settings from '../pages/Settings';
+import Vehicles from '../pages/Vehicles';
+import Drivers from '../pages/Drivers';
+import Trips from '../pages/Trips';
 import Login from '../pages/Login';
 import NotFound from '../pages/NotFound';
 
@@ -23,6 +26,9 @@ const AppRoutes = () => {
         }
       >
         <Route index element={<DashboardHome />} />
+        <Route path="vehicles" element={<Vehicles />} />
+        <Route path="drivers" element={<Drivers />} />
+        <Route path="trips" element={<Trips />} />
         <Route path="settings" element={<Settings />} />
       </Route>
 

@@ -6,6 +6,9 @@ const connectDB = require('./config/db');
 
 const authRoutes = require('./routes/authRoutes');
 const dashboardRoutes = require('./routes/dashboardRoutes');
+const vehicleRoutes = require('./routes/vehicleRoutes');
+const driverRoutes = require('./routes/driverRoutes');
+const tripRoutes = require('./routes/tripRoutes');
 
 const app = express();
 
@@ -29,6 +32,9 @@ app.use(cookieParser());
 // Mount API routes
 app.use('/api/auth', authRoutes);
 app.use('/api/dashboard', dashboardRoutes);
+app.use('/api/vehicles', vehicleRoutes);
+app.use('/api/drivers', driverRoutes);
+app.use('/api/trips', tripRoutes);
 
 // Base route for connectivity checks
 app.get('/', (req, res) => {

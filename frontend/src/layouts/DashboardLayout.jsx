@@ -55,6 +55,9 @@ const DashboardLayout = () => {
 
   const menuItems = [
     { name: 'Dashboard', path: '/', icon: LayoutDashboard },
+    { name: 'Vehicles', path: '/vehicles', icon: Truck },
+    { name: 'Drivers', path: '/drivers', icon: UserIcon },
+    { name: 'Trips', path: '/trips', icon: Navigation },
     { name: 'Settings', path: '/settings', icon: SettingsIcon },
   ];
 
