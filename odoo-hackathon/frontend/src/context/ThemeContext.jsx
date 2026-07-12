@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-import React, { createContext, useState, useEffect, useContext } from 'react';
-
-const ThemeContext = createContext();
-
-export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState(() => {
-    const saved = localStorage.getItem('transitops-theme');
-    return saved || 'dark';
-=======
 import React, { createContext, useState, useEffect } from 'react';
 
 export const ThemeContext = createContext();
@@ -20,23 +10,10 @@ export const ThemeProvider = ({ children }) => {
     
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     return systemPrefersDark ? 'dark' : 'light';
->>>>>>> ed1c99fe4af44587657213251c6f23c3b7c9de38
   });
 
   useEffect(() => {
     const root = window.document.documentElement;
-<<<<<<< HEAD
-    root.setAttribute('data-theme', theme);
-    localStorage.setItem('transitops-theme', theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
-  };
-
-  return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-=======
     if (theme === 'dark') {
       root.classList.add('dark');
     } else {
@@ -51,17 +28,7 @@ export const ThemeProvider = ({ children }) => {
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme, isDark: theme === 'dark' }}>
->>>>>>> ed1c99fe4af44587657213251c6f23c3b7c9de38
       {children}
     </ThemeContext.Provider>
   );
 };
-<<<<<<< HEAD
-
-export const useTheme = () => {
-  const context = useContext(ThemeContext);
-  if (!context) throw new Error('useTheme must be used within a ThemeProvider');
-  return context;
-};
-=======
->>>>>>> ed1c99fe4af44587657213251c6f23c3b7c9de38
